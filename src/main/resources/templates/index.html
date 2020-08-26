@@ -17,9 +17,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="employee : ${ListEmployees}">
+				<tr th:each="employee : ${listEmployees}">
 					<td th:text="${employee.firstName}"></td>
-					<td th:text="${employee.LastName}"></td>
+					<td th:text="${employee.lastName}"></td>
 					<td th:text="${employee.email}"></td>
 				</tr>
 			</tbody>
