@@ -37,5 +37,9 @@ public Employee getEmployeeById(long id) {
 	}
 	return employee;
 }
+@Override
+public void deleteEmployeeById(long id) {
+	this.employeeRepository.deleteById(id);
+}
 
 }

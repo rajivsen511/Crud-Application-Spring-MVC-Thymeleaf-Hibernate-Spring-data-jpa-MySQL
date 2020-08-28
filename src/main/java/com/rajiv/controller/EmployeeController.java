@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 
 import com.rajiv.model.Employee;
 import com.rajiv.services.EmployeeService;
 
-@RestController
+@Controller
 public class EmployeeController {
 	
 @Autowired	
@@ -45,6 +45,12 @@ private EmployeeService employeeService;
 		
 		model.addAttribute("employee", employee);
 		return "update_employee";
+		
+	}
+	@GetMapping("/deleteEmployee/{id}")
+	public String deleteEmployee(@PathVariable (value = "id") long id) {
+		this.employeeService.deleteEmployeeById(id);
+		return "redirect:/";
 		
 	}
 
